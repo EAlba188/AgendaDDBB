@@ -9,6 +9,7 @@ import android.widget.EditText;
 
 import com.example.practicabbddcarmelo.db.AppDatabase;
 import com.example.practicabbddcarmelo.db.User;
+import com.example.practicabbddcarmelo.viewmodel.ViewModel;
 
 public class AddNewUserActivity extends AppCompatActivity {
 
@@ -48,7 +49,10 @@ public class AddNewUserActivity extends AppCompatActivity {
         user.location = location;
         user.street = street;
         user.number = number;
-        db.userDao().insertUser(user);
+
+        ViewModel v = new ViewModel();
+        v.insert(user, getApplicationContext());
+
         finish();
     }
 

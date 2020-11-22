@@ -13,6 +13,7 @@ import android.widget.Toast;
 
 import com.example.practicabbddcarmelo.db.AppDatabase;
 import com.example.practicabbddcarmelo.db.User;
+import com.example.practicabbddcarmelo.viewmodel.ViewModel;
 
 import java.util.List;
 
@@ -78,8 +79,9 @@ public class EditUserActivity extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
 
-                        AppDatabase db = AppDatabase.getDbInstance(v.getContext());
-                        db.userDao().updateFirstname(nuevo, finalID);
+                        ViewModel v = new ViewModel();
+                        v.updateFirstName(nuevo, finalID, getApplicationContext());
+
                         Toast.makeText(EditUserActivity.this, "Guardado con exito", Toast.LENGTH_SHORT).show();
 
                     }
@@ -104,8 +106,8 @@ public class EditUserActivity extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
 
-                        AppDatabase db = AppDatabase.getDbInstance(v.getContext());
-                        db.userDao().updateLastname(nuevo, finalID);
+                        ViewModel v = new ViewModel();
+                        v.updateLastName(nuevo, finalID, getApplicationContext());
                         Toast.makeText(EditUserActivity.this, "Guardado con exito", Toast.LENGTH_SHORT).show();
                     }
                 });
@@ -129,8 +131,8 @@ public class EditUserActivity extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
 
-                        AppDatabase db = AppDatabase.getDbInstance(v.getContext());
-                        db.userDao().updatePhone(nuevo, finalID);
+                        ViewModel v = new ViewModel();
+                        v.updatePhone(nuevo, finalID, getApplicationContext());
                         Toast.makeText(EditUserActivity.this, "Guardado con exito", Toast.LENGTH_SHORT).show();
                     }
                 });
@@ -154,8 +156,8 @@ public class EditUserActivity extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
 
-                        AppDatabase db = AppDatabase.getDbInstance(v.getContext());
-                        db.userDao().updateBday(nuevo, finalID);
+                        ViewModel v = new ViewModel();
+                        v.updateBday(nuevo, finalID, getApplicationContext());
                         Toast.makeText(EditUserActivity.this, "Guardado con exito", Toast.LENGTH_SHORT).show();
                     }
                 });
@@ -179,8 +181,8 @@ public class EditUserActivity extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
 
-                        AppDatabase db = AppDatabase.getDbInstance(v.getContext());
-                        db.userDao().updateLocation(nuevo, finalID);
+                        ViewModel v = new ViewModel();
+                        v.updateLocation(nuevo, finalID, getApplicationContext());
                         Toast.makeText(EditUserActivity.this, "Guardado con exito", Toast.LENGTH_SHORT).show();
                     }
                 });
@@ -204,8 +206,8 @@ public class EditUserActivity extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
 
-                        AppDatabase db = AppDatabase.getDbInstance(v.getContext());
-                        db.userDao().updateStreet(nuevo, finalID);
+                        ViewModel v = new ViewModel();
+                        v.updateStreet(nuevo, finalID, getApplicationContext());
                         Toast.makeText(EditUserActivity.this, "Guardado con exito", Toast.LENGTH_SHORT).show();
                     }
                 });
@@ -229,8 +231,8 @@ public class EditUserActivity extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
 
-                        AppDatabase db = AppDatabase.getDbInstance(v.getContext());
-                        db.userDao().updateNumber(nuevo, finalID);
+                        ViewModel v = new ViewModel();
+                        v.updateNumber(nuevo, finalID, getApplicationContext());
                         Toast.makeText(EditUserActivity.this, "Guardado con exito", Toast.LENGTH_SHORT).show();
                     }
                 });

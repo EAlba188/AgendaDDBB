@@ -17,6 +17,7 @@ import android.widget.Toast;
 
 import com.example.practicabbddcarmelo.db.AppDatabase;
 import com.example.practicabbddcarmelo.db.User;
+import com.example.practicabbddcarmelo.viewmodel.ViewModel;
 
 import java.util.List;
 
@@ -88,9 +89,8 @@ public class MainActivity extends AppCompatActivity {
                         String id2 = preID.getText().toString();
                         int id = Integer.parseInt(id2);
 
-                        AppDatabase db = AppDatabase.getDbInstance(v.getContext());
-
-                        db.userDao().supUser(id);
+                        ViewModel v = new ViewModel();
+                        v.delete(id, getApplicationContext());
 
                         loadUserList();
                     }

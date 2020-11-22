@@ -1,5 +1,6 @@
 package com.example.practicabbddcarmelo.db;
 
+import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
@@ -17,14 +18,14 @@ public interface UserDao {
     @Insert
     void insertUser(User... users);
 
-    @Delete
-    void delete(User user);
-
     @Query("DELETE FROM user WHERE uid = :id")
     void supUser(int id);
 
     @Query("SELECT * FROM user WHERE uid= :id")
     User getIdData(int id);
+
+    @Query("SELECT * FROM user")
+    LiveData<List<User>> getAllLive();
 
     @Query("UPDATE user SET first_name= :fn WHERE uid= :id")
     void updateFirstname(String fn, int id);
