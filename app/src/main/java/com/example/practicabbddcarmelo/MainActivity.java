@@ -3,6 +3,7 @@ package com.example.practicabbddcarmelo;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.Observer;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -30,6 +31,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
+
+
         Button listar = findViewById(R.id.btListar);
         Button addNewUserButton = findViewById(R.id.addNewUserButton);
         addNewUserButton.setOnClickListener(new View.OnClickListener() {
@@ -37,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 startActivity(new Intent(MainActivity.this, AddNewUserActivity.class));
             }
+
         });
 
         listar.setOnClickListener(new View.OnClickListener() {
@@ -48,7 +53,10 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+
     }
+
+
 
     private void initRecyclerView() {
         RecyclerView recyclerView = findViewById(R.id.recyclerView);
@@ -77,7 +85,6 @@ public class MainActivity extends AppCompatActivity {
                         intent.putExtra("id", id2);
                         startActivity(intent);
 
-
                     }
                 });
 
@@ -92,7 +99,6 @@ public class MainActivity extends AppCompatActivity {
                         ViewModel v = new ViewModel();
                         v.delete(id, getApplicationContext());
 
-                        loadUserList();
                     }
                 });
 
@@ -107,6 +113,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         recyclerView.setAdapter(userListAdapter);
+
     }
 
     private void loadUserList() {
