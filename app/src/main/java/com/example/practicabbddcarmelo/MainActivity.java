@@ -110,9 +110,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void loadUserList() {
-        AppDatabase db = AppDatabase.getDbInstance(this.getApplicationContext());
-        List<User> userList = db.userDao().getAllUsers();
-        userListAdapter.setUserList(userList);
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                AppDatabase db = AppDatabase.getDbInstance(MainActivity.this);
+                List<User> userList = db.userDao().getAllUsers();
+                userListAdapter.setUserList(userList);
+            }
+        });
+
     }
 
 
