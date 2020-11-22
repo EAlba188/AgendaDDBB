@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EditUserActivity">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.57" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nombre"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/textView10"
+        app:layout_constraintEnd_toStartOf="@+id/editName"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/guideline5"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Apellidos"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/textView11"
+        app:layout_constraintEnd_toStartOf="@+id/editLastname"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/guideline5"
+        app:layout_constraintTop_toBottomOf="@+id/textView9" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Telefono"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/textView12"
+        app:layout_constraintStart_toStartOf="@+id/textView10"
+        app:layout_constraintTop_toBottomOf="@+id/textView10" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cumpleaños"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/textView13"
+        app:layout_constraintStart_toStartOf="@+id/textView11"
+        app:layout_constraintTop_toBottomOf="@+id/textView11" />
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Localidad"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/textView14"
+        app:layout_constraintStart_toStartOf="@+id/textView12"
+        app:layout_constraintTop_toBottomOf="@+id/textView12" />
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Calle"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/textView15"
+        app:layout_constraintStart_toStartOf="@+id/textView13"
+        app:layout_constraintTop_toBottomOf="@+id/textView13" />
+
+    <TextView
+        android:id="@+id/textView15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Numero"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline4"
+        app:layout_constraintStart_toStartOf="@+id/textView14"
+        app:layout_constraintTop_toBottomOf="@+id/textView14" />
+
+    <EditText
+        android:id="@+id/editName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/editLastname"
+        app:layout_constraintEnd_toEndOf="@+id/editLastname"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/guideline3"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editLastname"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/editPhone"
+        app:layout_constraintEnd_toEndOf="@+id/editPhone"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/guideline3"
+        app:layout_constraintTop_toBottomOf="@+id/editName" />
+
+    <EditText
+        android:id="@+id/editPhone"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="phone"
+        app:layout_constraintBottom_toTopOf="@+id/editBirth"
+        app:layout_constraintEnd_toEndOf="@+id/editBirth"
+        app:layout_constraintStart_toStartOf="@+id/guideline3"
+        app:layout_constraintTop_toBottomOf="@+id/editLastname" />
+
+    <EditText
+        android:id="@+id/editBirth"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="date"
+        app:layout_constraintBottom_toTopOf="@+id/editLocation"
+        app:layout_constraintEnd_toEndOf="@+id/editLocation"
+        app:layout_constraintStart_toStartOf="@+id/guideline3"
+        app:layout_constraintTop_toBottomOf="@+id/editPhone" />
+
+    <EditText
+        android:id="@+id/editLocation"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/editStreet"
+        app:layout_constraintEnd_toEndOf="@+id/editStreet"
+        app:layout_constraintStart_toStartOf="@+id/guideline3"
+        app:layout_constraintTop_toBottomOf="@+id/editBirth" />
+
+    <EditText
+        android:id="@+id/editStreet"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/editNumber"
+        app:layout_constraintEnd_toEndOf="@+id/editNumber"
+        app:layout_constraintStart_toStartOf="@+id/guideline3"
+        app:layout_constraintTop_toBottomOf="@+id/editLocation" />
+
+    <EditText
+        android:id="@+id/editNumber"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintBottom_toTopOf="@+id/guideline4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline3"
+        app:layout_constraintTop_toBottomOf="@+id/editStreet" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.8" />
+
+    <Button
+        android:id="@+id/btVolver"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Volver"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline4" />
+
+    <TextView
+        android:id="@+id/idCheck"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Id. "
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.24" />
+
+    <Button
+        android:id="@+id/changeBday"
+        android:layout_width="74dp"
+        android:layout_height="36dp"
+        android:text="Edit"
+        app:layout_constraintBottom_toTopOf="@+id/changeLocation"
+        app:layout_constraintStart_toStartOf="@+id/changePhone"
+        app:layout_constraintTop_toBottomOf="@+id/changePhone" />
+
+    <Button
+        android:id="@+id/changeNumber"
+        android:layout_width="74dp"
+        android:layout_height="36dp"
+        android:text="Edit"
+        app:layout_constraintBottom_toTopOf="@+id/guideline4"
+        app:layout_constraintStart_toStartOf="@+id/changeStreet"
+        app:layout_constraintTop_toBottomOf="@+id/changeStreet" />
+
+    <Button
+        android:id="@+id/changeStreet"
+        android:layout_width="74dp"
+        android:layout_height="36dp"
+        android:text="Edit"
+        app:layout_constraintBottom_toTopOf="@+id/changeNumber"
+        app:layout_constraintStart_toStartOf="@+id/changeLocation"
+        app:layout_constraintTop_toBottomOf="@+id/changeLocation" />
+
+    <Button
+        android:id="@+id/changeFirstname"
+        android:layout_width="74dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="16dp"
+        android:text="Edit"
+        app:layout_constraintBottom_toTopOf="@+id/changeLastname"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/changeLocation"
+        android:layout_width="74dp"
+        android:layout_height="36dp"
+        android:text="Edit"
+        app:layout_constraintBottom_toTopOf="@+id/changeStreet"
+        app:layout_constraintStart_toStartOf="@+id/changeBday"
+        app:layout_constraintTop_toBottomOf="@+id/changeBday" />
+
+    <Button
+        android:id="@+id/changePhone"
+        android:layout_width="74dp"
+        android:layout_height="36dp"
+        android:text="Edit"
+        app:layout_constraintBottom_toTopOf="@+id/changeBday"
+        app:layout_constraintStart_toStartOf="@+id/changeLastname"
+        app:layout_constraintTop_toBottomOf="@+id/changeLastname" />
+
+    <Button
+        android:id="@+id/changeLastname"
+        android:layout_width="74dp"
+        android:layout_height="36dp"
+        android:text="Edit"
+        app:layout_constraintBottom_toTopOf="@+id/changePhone"
+        app:layout_constraintStart_toStartOf="@+id/changeFirstname"
+        app:layout_constraintTop_toBottomOf="@+id/changeFirstname" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
