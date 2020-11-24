@@ -1,6 +1,5 @@
-package com.example.practicabbddcarmelo;
+package com.example.practicabbddcarmelo.View;
 
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
@@ -12,19 +11,17 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.example.practicabbddcarmelo.db.AppDatabase;
+import com.example.practicabbddcarmelo.R;
+import com.example.practicabbddcarmelo.UserListAdapter;
 import com.example.practicabbddcarmelo.db.User;
 import com.example.practicabbddcarmelo.viewmodel.ViewModel;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Observable;
 
 
 public class MainActivity extends AppCompatActivity {

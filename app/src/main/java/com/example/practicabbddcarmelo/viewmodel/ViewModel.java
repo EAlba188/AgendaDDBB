@@ -7,7 +7,6 @@ import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 
-import com.example.practicabbddcarmelo.MainActivity;
 import com.example.practicabbddcarmelo.db.Repository;
 import com.example.practicabbddcarmelo.db.User;
 

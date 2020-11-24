@@ -1,4 +1,4 @@
-package com.example.practicabbddcarmelo;
+package com.example.practicabbddcarmelo.View;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,11 +11,10 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.practicabbddcarmelo.R;
 import com.example.practicabbddcarmelo.db.AppDatabase;
 import com.example.practicabbddcarmelo.db.User;
 import com.example.practicabbddcarmelo.viewmodel.ViewModel;
-
-import java.util.List;
 
 public class EditUserActivity extends AppCompatActivity {
 

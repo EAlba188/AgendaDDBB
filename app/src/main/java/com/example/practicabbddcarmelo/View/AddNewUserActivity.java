@@ -1,4 +1,4 @@
-package com.example.practicabbddcarmelo;
+package com.example.practicabbddcarmelo.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.example.practicabbddcarmelo.R;
 import com.example.practicabbddcarmelo.db.AppDatabase;
 import com.example.practicabbddcarmelo.db.User;
 import com.example.practicabbddcarmelo.viewmodel.ViewModel;
