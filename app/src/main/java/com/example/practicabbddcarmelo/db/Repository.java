@@ -14,6 +14,7 @@ public class Repository {
     private UserDao userDao;
 
     public Repository(Context context){
+        Context appContext = context.getApplicationContext();
         repositoryDB = AppDatabase.getDbInstance(context);
         userDao = repositoryDB.userDao();
 
@@ -23,6 +24,7 @@ public class Repository {
     public LiveData<List<User>> getLiveUserList(){
         return liveUserList;
     }
+
 
     public void insert(User user){
         ThreadExecutor.threadExecutor.execute(new Runnable() {

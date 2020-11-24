@@ -4,6 +4,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -11,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -20,11 +22,15 @@ import com.example.practicabbddcarmelo.db.AppDatabase;
 import com.example.practicabbddcarmelo.db.User;
 import com.example.practicabbddcarmelo.viewmodel.ViewModel;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Observable;
 
 
 public class MainActivity extends AppCompatActivity {
     private UserListAdapter userListAdapter;
+    private static ViewModel v;
+    ArrayList<User> lista;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,9 +38,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
-
-
-        Button listar = findViewById(R.id.btListar);
         Button addNewUserButton = findViewById(R.id.addNewUserButton);
         addNewUserButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -44,17 +47,27 @@ public class MainActivity extends AppCompatActivity {
 
         });
 
-        listar.setOnClickListener(new View.OnClickListener() {
+        v = new ViewModelProvider(this).get(ViewModel.class);
+
+        v.getListLiveData().observe(this, new Observer<List<User>>() {
+
             @Override
-            public void onClick(View v) {
+            public void onChanged(List<User> users) {
+                lista = new ArrayList<>();
+                for (int i = 0; i < users.size(); i++){
+                    lista.add(users.get(i));
+                }
+
                 initRecyclerView();
-                loadUserList();
+
             }
         });
 
 
 
     }
+
+
 
 
 
@@ -66,20 +79,22 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.addItemDecoration(dividerItemDecoration);
         userListAdapter = new UserListAdapter(this);
 
+
+
         userListAdapter.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View view) {
 
-                AlertDialog.Builder builder = new AlertDialog.Builder(v.getContext());
+                AlertDialog.Builder builder = new AlertDialog.Builder(view.getContext());
                 builder.setTitle("Opciones");
                 builder.setMessage("¿Qué deseas hacer?");
 
-                builder.setNeutralButton("Editar", new DialogInterface.OnClickListener() {
+                builder.setNegativeButton("Editar", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         Intent intent = new Intent(getApplicationContext(), EditUserActivity.class);
 
-                        TextView preID = v.findViewById(R.id.tvId);
+                        TextView preID = view.findViewById(R.id.tvId);
                         String id2 = preID.getText().toString();
 
                         intent.putExtra("id", id2);
@@ -92,41 +107,32 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
 
-                        TextView preID = v.findViewById(R.id.tvId);
+                        TextView preID = view.findViewById(R.id.tvId);
                         String id2 = preID.getText().toString();
                         int id = Integer.parseInt(id2);
-
-                        ViewModel v = new ViewModel();
+                        v = new ViewModel(getApplication());
                         v.delete(id, getApplicationContext());
-
                     }
                 });
 
-                builder.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
+                builder.setNeutralButton("Cancelar", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                     }
                 });
+
                 AlertDialog alert = builder.create();
                 builder.show();
             }
         });
 
         recyclerView.setAdapter(userListAdapter);
-
+        userListAdapter.setUserList(lista);
     }
 
-    private void loadUserList() {
-        runOnUiThread(new Runnable() {
-            @Override
-            public void run() {
-                AppDatabase db = AppDatabase.getDbInstance(MainActivity.this);
-                List<User> userList = db.userDao().getAllUsers();
-                userListAdapter.setUserList(userList);
-            }
-        });
 
-    }
+
+
 
 
 }

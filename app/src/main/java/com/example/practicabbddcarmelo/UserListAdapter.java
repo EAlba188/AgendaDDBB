@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.lifecycle.LiveData;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.practicabbddcarmelo.db.User;
@@ -23,10 +24,17 @@ public class UserListAdapter extends RecyclerView.Adapter<UserListAdapter.MyView
         this.context = context;
     }
 
+
     public void setUserList(List<User> userList) {
         this.userList = userList;
         notifyDataSetChanged();
     }
+
+    public List getList(){
+        return userList;
+    }
+
+
 
     @NonNull
     @Override

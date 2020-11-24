@@ -79,7 +79,7 @@ public class EditUserActivity extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
 
-                        ViewModel v = new ViewModel();
+                        ViewModel v = new ViewModel(getApplication());
                         v.updateFirstName(nuevo, finalID, getApplicationContext());
 
                         Toast.makeText(EditUserActivity.this, "Guardado con exito", Toast.LENGTH_SHORT).show();
@@ -106,7 +106,7 @@ public class EditUserActivity extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
 
-                        ViewModel v = new ViewModel();
+                        ViewModel v = new ViewModel(getApplication());
                         v.updateLastName(nuevo, finalID, getApplicationContext());
                         Toast.makeText(EditUserActivity.this, "Guardado con exito", Toast.LENGTH_SHORT).show();
                     }
@@ -131,7 +131,7 @@ public class EditUserActivity extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
 
-                        ViewModel v = new ViewModel();
+                        ViewModel v = new ViewModel(getApplication());
                         v.updatePhone(nuevo, finalID, getApplicationContext());
                         Toast.makeText(EditUserActivity.this, "Guardado con exito", Toast.LENGTH_SHORT).show();
                     }
@@ -156,7 +156,7 @@ public class EditUserActivity extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
 
-                        ViewModel v = new ViewModel();
+                        ViewModel v = new ViewModel(getApplication());
                         v.updateBday(nuevo, finalID, getApplicationContext());
                         Toast.makeText(EditUserActivity.this, "Guardado con exito", Toast.LENGTH_SHORT).show();
                     }
@@ -181,7 +181,7 @@ public class EditUserActivity extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
 
-                        ViewModel v = new ViewModel();
+                        ViewModel v = new ViewModel(getApplication());
                         v.updateLocation(nuevo, finalID, getApplicationContext());
                         Toast.makeText(EditUserActivity.this, "Guardado con exito", Toast.LENGTH_SHORT).show();
                     }
@@ -206,7 +206,7 @@ public class EditUserActivity extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
 
-                        ViewModel v = new ViewModel();
+                        ViewModel v = new ViewModel(getApplication());
                         v.updateStreet(nuevo, finalID, getApplicationContext());
                         Toast.makeText(EditUserActivity.this, "Guardado con exito", Toast.LENGTH_SHORT).show();
                     }
@@ -231,7 +231,7 @@ public class EditUserActivity extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
 
-                        ViewModel v = new ViewModel();
+                        ViewModel v = new ViewModel(getApplication());
                         v.updateNumber(nuevo, finalID, getApplicationContext());
                         Toast.makeText(EditUserActivity.this, "Guardado con exito", Toast.LENGTH_SHORT).show();
                     }

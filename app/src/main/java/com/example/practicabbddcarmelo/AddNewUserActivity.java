@@ -50,7 +50,7 @@ public class AddNewUserActivity extends AppCompatActivity {
         user.street = street;
         user.number = number;
 
-        ViewModel v = new ViewModel();
+        ViewModel v = new ViewModel(getApplication());
         v.insert(user, getApplicationContext());
 
         finish();
